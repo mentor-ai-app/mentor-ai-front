@@ -1,6 +1,7 @@
-import { Button } from "@/shared/components/ui/button";
+import { RouterProvider } from "react-router";
 import "./index.css";
+import { router } from "../model";
 
 export const App = () => {
-  return <Button>App</Button>;
+  return <RouterProvider router={router} />;
 };
