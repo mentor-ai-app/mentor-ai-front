@@ -1,5 +1,10 @@
 import { z } from "zod";
 
+export interface AuthJWT {
+  accessToken: string;
+  refreshToken: string;
+}
+
 const username = z.string().min(4, {
   message: "Username must be at least 4 characters.",
 });
