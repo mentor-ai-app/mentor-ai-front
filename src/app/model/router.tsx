@@ -1,4 +1,5 @@
 import RegisterPage from "@/pages/auth/register-page";
+import { ProtectedRoutes } from "@/shared/auth";
 import { AuthLayout } from "@/shared/components/layout/auth-layout";
 import { routes } from "@/shared/navigation";
 import { lazy } from "react";
@@ -9,8 +10,13 @@ const LoginPage = lazy(() => import("@/pages/auth/login-page"));
 
 export const router = createBrowserRouter([
   {
-    path: routes.home,
-    element: <HomePage />,
+    element: <ProtectedRoutes />,
+    children: [
+      {
+        path: routes.home,
+        element: <HomePage />,
+      },
+    ],
   },
   {
     element: <AuthLayout />,
